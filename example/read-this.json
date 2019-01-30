@@ -1,0 +1,6 @@
+{
+  "example": "config",
+  "with": ["various of", "values", 2],
+  "boolean": true,
+  "number": 1234567890
+}
