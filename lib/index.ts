@@ -10,9 +10,13 @@ let config: IConfig = {};
 
 /**
  * Sets a new config file.
- * @param relativePath - Relative path to the file from the app's root.
+ * @param {string} relativePath - Relative path to the file from the app's root.
+ * @param {boolean} errorMessages - Whether to print out error messages why the config was not loaded.
  */
-export const setConfig = (relativePath: string): void => {
+export const setConfig = (
+  relativePath: string,
+  errorMessages?: boolean
+): void => {
   try {
     // Relative path must exist.
     // The path is from the project root.
@@ -29,16 +33,16 @@ export const setConfig = (relativePath: string): void => {
             config = {
               ...JSON.parse(file.toString()),
             };
-          } else {
+          } else if (errorMessages) {
             console.log(`The config "${absolutePath}" Could not be read.`);
           }
-        } else {
+        } else if (errorMessages) {
           console.log(`The config "${absolutePath}" is not JSON.`);
         }
       } catch {
         console.log(`No access to ${absolutePath}.`);
       }
-    } else {
+    } else if (errorMessages) {
       console.log(
         'Invalid config path. It cannot be empty and it must be a string.'
       );
