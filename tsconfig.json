@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "lib": ["es7"],
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "./build",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ]
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/*"
+  ]
+}
