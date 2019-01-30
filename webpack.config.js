@@ -3,7 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Root paths.
 const root = path.resolve(__dirname, './')
-const dist = path.resolve(__dirname, './build')
+const dist = path.resolve(__dirname, './dist')
 const src = path.resolve(__dirname, './lib')
 
 module.exports = {

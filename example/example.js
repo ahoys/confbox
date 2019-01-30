@@ -2,7 +2,7 @@
 // node example/example.js
 
 // Save the config here. Then read it in the sub-file.
-const { setConfig } = require('../build/index');
+const { setConfig } = require('../dist/index');
 setConfig('./example/read-this.json');
 const subFile = require('./sub-file');
 

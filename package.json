@@ -2,12 +2,12 @@
   "name": "confbox",
   "version": "1.0.0",
   "description": "A config reader.",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "build": "webpack --progress --config webpack.config.js",
+    "dist": "webpack --progress --config webpack.config.js",
     "test": "cross-env NODE_ENV=testing jest",
     "lint": "./node_modules/.bin/tslint --project ./ --fix ./src/**"
   },
@@ -42,7 +42,7 @@
   },
   "bugs": "https://github.com/ahoys/confbox/issues",
   "files": [
-    "build"
+    "dist"
   ],
-  "types": "build/index.d.ts"
+  "types": "dist/index.d.ts"
 }

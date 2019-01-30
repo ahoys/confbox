@@ -1,4 +1,4 @@
-const config = require('../build/index').default();
+const config = require('../dist/index').default();
 
 module.exports = {
   printConfig: () => {
