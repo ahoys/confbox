@@ -5,8 +5,13 @@ interface IConfig {
   [key: string]: any;
 }
 
+// The config is stored here.
 let config: IConfig = {};
 
+/**
+ * Sets a new config file.
+ * @param relativePath - Relative path to the file from the app's root.
+ */
 export const setConfig = (relativePath: string): void => {
   try {
     // Relative path must exist.
@@ -38,17 +43,33 @@ export const setConfig = (relativePath: string): void => {
         'Invalid config path. It cannot be empty and it must be a string.'
       );
     }
-  } catch {
-    console.log('Failed to set the config.');
+  } catch (e) {
+    console.log(e);
   }
 };
 
-export const getConfig = (relativePath: string): IConfig => {
+/**
+ * Returns the currently active config file.
+ */
+export const getConfig = (): IConfig => {
   try {
     return config;
-  } catch {
-    console.log('Failed to return the config.');
+  } catch (e) {
+    console.log(e);
     return {};
+  }
+};
+
+/**
+ * Returns whether a config is set.
+ * @returns {boolean} - True if the config is set and can be used.
+ */
+export const hasConfig = (): boolean => {
+  try {
+    return typeof config === 'object' && Object.keys(config).length > 0;
+  } catch (e) {
+    console.log(e);
+    return false;
   }
 };
 
